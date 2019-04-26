@@ -16,16 +16,16 @@ app_pages:
     prefix: /pages
     name_prefix: app_pages_
 
-# app_works:
-#     resource: "Routes/works.yaml"
-#     prefix: /works
-#     name_prefix: app_works_
-#
-# app_posts:
-#     resource: "Routes/posts.yaml"
-#     prefix: /posts
-#     name_prefix: app_posts_
-#
+app_works:
+    resource: "Routes/works.yaml"
+    prefix: /works
+    name_prefix: app_works_
+
+app_posts:
+    resource: "Routes/posts.yaml"
+    prefix: /posts
+    name_prefix: app_posts_
+
 # app_tags:
 #     resource: "Routes/tags.yaml"
 #     prefix: /tags

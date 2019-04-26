@@ -7,7 +7,7 @@
 {% extends 'base.html.twig' %}
 
   {% block title %}
-    {{ page.titre }}
+    {{ attribute(work, 'nom' ~ app.request.locale) }}
   {% endblock %}
 
 

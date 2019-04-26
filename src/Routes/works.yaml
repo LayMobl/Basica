@@ -1,0 +1,21 @@
+# ./src/Routes/works.yaml
+
+# Route 1: App_works_index
+#   /works/
+#   > indexAction de WorkController
+#   Je suis sur la page index des works
+index:
+    path: /{_locale}
+    controller: App\Controller\WorkController::indexAction
+
+# Route 2: app_works_show
+#   /works/slug
+#    > showAction du WorkController
+#   ! définir le slug
+#   Je suis sur la page show de la work xxx
+show:
+    path: /{id}/{slug}/{_locale}
+    controller: App\Controller\WorkController::showAction
+    requirements:
+        id:   '[1-9][0-9]*'
+        slug: '[a-z][a-z0-9\-]*'

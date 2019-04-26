@@ -1,0 +1,21 @@
+# ./src/Routes/posts.yaml
+
+# Route 1: App_posts_index
+#   /posts/
+#   > indexAction de PostController
+#   Je suis sur la page index des posts
+index:
+    path: /{_locale}
+    controller: App\Controller\PostController::indexAction
+
+# Route 2: app_posts_show
+#   /posts/slug
+#    > showAction du PostController
+#   ! définir le slug
+#   Je suis sur la page show de la post xxx
+show:
+    path: /{id}/{slug}/{_locale}
+    controller: App\Controller\PostController::showAction
+    requirements:
+        id:   '[1-9][0-9]*'
+        slug: '[a-z][a-z0-9\-]*'

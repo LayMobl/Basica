@@ -1,30 +1,30 @@
 <?php
 /*
-  ./src/Controller/WorkController.php
+  ./src/Controller/PostController.php
 */
 namespace App\Controller;
 use Ieps\Core\GenericController;
-use App\Entity\Work;
-use App\Form\WorkType;
+use App\Entity\Post;
+use App\Form\PostType;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * Class WorkController
+ * Class PostController
  * @package App\Controller
  */
-class WorkController extends GenericController {
+class PostController extends GenericController {
 
 
     /**
      * @param int|null $limit
      * @param string $vue
      * @return \Symfony\Component\HttpFoundation\Response
-     * Vue index des works avec sa variable
+     * Vue index des posts avec sa variable
      */
     public function indexAction(int $limit = null, string $vue = 'index'){
-      $works = $this->_repository->findBy([], ["date" => "DESC"], $limit);
-      return $this->render('works/'. $vue .'.html.twig',[
-        'works' => $works
+      $posts = $this->_repository->findBy([], ["date" => "DESC"], $limit);
+      return $this->render('posts/'. $vue .'.html.twig',[
+        'posts' => $posts
       ]);
     }
 

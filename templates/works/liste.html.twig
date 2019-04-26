@@ -1,0 +1,26 @@
+<div class="section section-white">
+  <div class="container">
+    <div class="row">
+
+      <div class="section-title">
+        <h1>Our Recent Works</h1>
+      </div>
+
+
+      <ul class="grid cs-style-3">
+        {% for work in works %}
+        <div class="col-md-4 col-sm-6">
+          <figure>
+            <img src="{{ asset('img/portfolio/'~ work.image ~ '')}}" alt="{{'img/portfolio/'~ work.image ~ ''}}">
+            <figcaption>
+              <h3>{{ attribute(work, 'nom' ~ app.request.locale) }}</h3>
+              <span>{{ work.client.nom }}</span>
+              <a href="{{path('app_works_show', {id: work.id , slug: attribute(work, 'nom' ~ app.request.locale) | slugify})}}">Take a look</a>
+            </figcaption>
+          </figure>
+        </div>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
