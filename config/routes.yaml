@@ -1,5 +1,37 @@
+# Route par défaut: app_homepage
+#   /
+#   > showAction du PageController
+#   Je suis sur le détail de la page 1
 app_homepage:
-    path: /
+    path: /{_locale}
     controller: App\Controller\PageController::showAction
     defaults:
         id: 1
+        _locale: fr
+    requirements:
+        _locale: fr|en
+
+app_pages:
+    resource: "Routes/pages.yaml"
+    prefix: /pages
+    name_prefix: app_pages_
+
+# app_works:
+#     resource: "Routes/works.yaml"
+#     prefix: /works
+#     name_prefix: app_works_
+#
+# app_posts:
+#     resource: "Routes/posts.yaml"
+#     prefix: /posts
+#     name_prefix: app_posts_
+#
+# app_tags:
+#     resource: "Routes/tags.yaml"
+#     prefix: /tags
+#     name_prefix: app_tags_
+#
+# app_categorys:
+#     resource: "Routes/categorys.yaml"
+#     prefix: /categorys
+#     name_prefix: app_categorys_

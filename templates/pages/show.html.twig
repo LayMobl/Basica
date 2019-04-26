@@ -1,0 +1,43 @@
+{#
+  ./templates/pages/show.html.twig
+  Variables disponibles:
+    - page pages(id, titre, slug, texte, dateCreation)
+#}
+
+{% extends 'base.html.twig' %}
+
+  {% block title %}
+    {{ attribute(page, 'titre' ~ app.request.locale) }}
+  {% endblock %}
+
+
+
+{% block content1 %}
+
+
+{# CONTENUS COMPLEMENTAIRES #}
+
+  {% if page.id == 1 %}
+
+  {{ render(controller('App\\Controller\\WorkController::indexAction',{limit: 3, vue:'slider'})) }}
+
+
+  {% elseif page.id == 2 %}
+
+  {{ render(controller('App\\Controller\\WorkController::indexAction')) }}
+
+
+  {% elseif page.id == 3 %}
+
+  {{ render(controller('App\\Controller\\FilmController::indexAction')) }}
+
+
+  {% elseif page.id == 4 %}
+
+  {{ render(controller('App\\Controller\\PageController::showAction', {id:4, vue:'contact'})) }}
+
+{% endif %}
+
+
+
+{% endblock %}

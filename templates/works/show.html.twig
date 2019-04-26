@@ -1,0 +1,42 @@
+{#
+  ./templates/pages/show.html.twig
+  Variables disponibles:
+    - page pages(id, titre, slug, texte, dateCreation)
+#}
+
+{% extends 'base.html.twig' %}
+
+  {% block title %}
+    {{ page.titre }}
+  {% endblock %}
+
+
+
+{% block content1 %}
+
+
+{# CONTENUS COMPLEMENTAIRES #}
+
+  {% if page.id == 1 %}
+
+  {{ render(controller('App\\Controller\\WorkController::indexAction',{limit: 3, vue:'slider'})) }}
+
+  {% elseif page.id == 2 %}
+
+  <a class="btn btn-primary" href="{{ path ('app_creatures_add') }}">Ajouter une créature</a>
+  <hr>
+
+  {{ render(controller('App\\Controller\\CreatureController::indexAction')) }}
+
+
+  {% elseif page.id == 3 %}
+
+  <hr>
+  {{ render(controller('App\\Controller\\FilmController::indexAction')) }}
+
+
+{% endif %}
+
+
+
+{% endblock %}

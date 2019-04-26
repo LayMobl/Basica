@@ -1,0 +1,25 @@
+{#
+  ./templates/partials/nav.html.twig
+#}
+
+<header class="navbar navbar-inverse navbar-fixed-top" role="banner">
+        <div class="container">
+
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="{{path('app_homepage')}}"><img src="{{asset('img/logo.png')}}" alt="Basica"></a>
+          </div>
+
+          {# On envoit le nom de la route et les paramètres  #}
+           {{ render(controller('App\\Controller\\PageController::indexAction',{
+
+             '_route': app.request.get('_route'),
+             '_route_params': app.request.get('_route_params')
+ })) }}
+        </div>
+    </header><!--/header-->

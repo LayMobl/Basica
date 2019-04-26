@@ -1,0 +1,12 @@
+# ./src/Routes/pages.yaml
+
+# Route 1: app_pages_show
+#   /pages/slug
+#    > showAction du PageController
+#   Je suis sur la page show de la page xxx
+show:
+    path: /{id}/{slug}/{_locale}
+    controller: App\Controller\PageController::showAction
+    requirements:
+        id:   '[1-9][0-9]*'
+        slug: '[a-z][a-z0-9\-]*'
