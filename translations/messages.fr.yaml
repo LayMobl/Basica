@@ -48,3 +48,36 @@ blog_detail:
 
 contact:
     titre: Nous contacter
+
+connexion:
+    titre: Connexion au Back Office
+
+security:
+    login:
+        username: Nom d'utilisateur
+        password: Mot de passe
+        remember_me: Se rappeler de moi
+        submit: Valider
+
+Post: Article
+Work: Projet
+Tag: Tag
+Category: Catégorie
+Nomfr: Nom en francais
+Nomen: Nom en anglais
+Titre onefr: Premier titre en francais
+Titre twofr: Second titre en francais
+Titre oneen: Premier titre en anglais
+Titre twoen: Second titre en anglais
+Texte onefr: Premier texte en francais
+Texte twofr: Second texte en francais
+Texte oneen: Premier texte en anglais
+Texte twoen: Second texte en anglais
+Date: Date
+Year: Année
+Month: Mois
+Day: Jour
+Hour: Heure
+Minute: Minute
+Image: Image
+Categories: Catégories

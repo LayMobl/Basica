@@ -48,3 +48,36 @@ blog_detail:
 
 contact:
     titre: Get in touch with us
+
+connexion:
+    titre: Back Office connexion
+
+security:
+    login:
+        username: Username
+        password: Password
+        remember_me: Remember Me
+        submit: Submit
+
+Post: Post
+Work: Work
+Tag: Tag
+Category: Category
+Nomfr: Name in french
+Nomen: Name in english
+Titre onefr: First title in french
+Titre twofr: Second title in french
+Titre oneen: First title in english
+Titre twoen: Second title in english
+Texte onefr: First text in french
+Texte twofr: Second text in french
+Texte oneen: First text in englishs
+Texte twoen: Second text in english
+Date: Date
+Year: Year
+Month: Month
+Day: Day
+Hour: Hour
+Minute: Minute
+Image: Image
+Categories: Categories

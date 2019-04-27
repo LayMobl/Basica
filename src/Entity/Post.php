@@ -34,9 +34,9 @@ class Post
     private $titre_onefr;
 
     /**
-     * @ORM\Column(type="string", length=45)
+     * @ORM\Column(type="text")
      */
-    private $titre_oneen;
+    private $texte_onefr;
 
     /**
      * @ORM\Column(type="string", length=45)
@@ -44,14 +44,24 @@ class Post
     private $titre_twofr;
 
     /**
+     * @ORM\Column(type="text")
+     */
+    private $texte_twofr;
+
+    /**
      * @ORM\Column(type="string", length=45)
      */
-    private $titre_twoen;
+    private $titre_oneen;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $texte_onefr;
+    private $texte_oneen;
+
+    /**
+     * @ORM\Column(type="string", length=45)
+     */
+    private $titre_twoen;
 
     /**
      * @ORM\Column(type="text")
@@ -62,16 +72,6 @@ class Post
      * @ORM\Column(type="datetime")
      */
     private $date;
-
-    /**
-     * @ORM\Column(type="text")
-     */
-    private $texte_oneen;
-
-    /**
-     * @ORM\Column(type="text")
-     */
-    private $texte_twofr;
 
     /**
      * @ORM\Column(type="string", length=45)
@@ -262,4 +262,9 @@ class Post
 
         return $this;
     }
+
+    public function __toString()
+	{
+		return $this->nomfr;
+	}
 }
