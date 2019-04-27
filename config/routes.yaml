@@ -26,12 +26,12 @@ app_posts:
     prefix: /posts
     name_prefix: app_posts_
 
-# app_tags:
-#     resource: "Routes/tags.yaml"
-#     prefix: /tags
-#     name_prefix: app_tags_
-#
-# app_categorys:
-#     resource: "Routes/categorys.yaml"
-#     prefix: /categorys
-#     name_prefix: app_categorys_
+app_tags:
+    resource: "Routes/tags.yaml"
+    prefix: /tags
+    name_prefix: app_tags_
+
+app_categorys:
+    resource: "Routes/categorys.yaml"
+    prefix: /categorys
+    name_prefix: app_categorys_

@@ -3,7 +3,7 @@
     <div class="row">
 
       <div class="section-title">
-        <h1>Our Recent Works</h1>
+        <h1>{{ 'accueil.titre' | trans }}</h1>
       </div>
 
 
@@ -11,11 +11,13 @@
         {% for work in works %}
         <div class="col-md-4 col-sm-6">
           <figure>
-            <img src="{{ asset('img/portfolio/'~ work.image ~ '')}}" alt="{{'img/portfolio/'~ work.image ~ ''}}">
+            <a href="{{path('app_works_show', {id: work.id , slug: attribute(work, 'nom' ~ app.request.locale) | slugify})}}">
+              <img src="{{ asset('img/portfolio/'~ work.image ~ '')}}" alt="{{'img/portfolio/'~ work.image ~ ''}}">
+            </a>
             <figcaption>
               <h3>{{ attribute(work, 'nom' ~ app.request.locale) }}</h3>
               <span>{{ work.client.nom }}</span>
-              <a href="{{path('app_works_show', {id: work.id , slug: attribute(work, 'nom' ~ app.request.locale) | slugify})}}">Take a look</a>
+              <a href="{{path('app_works_show', {id: work.id , slug: attribute(work, 'nom' ~ app.request.locale) | slugify})}}">{{ 'portfolio.look' | trans }}</a>
             </figcaption>
           </figure>
         </div>

@@ -1,0 +1,13 @@
+{#
+  ./templates/categorys/index.html.twig
+  Variables disponibles:
+    - categorys Array(Page(id, titre, slug, texte, dateCreation))
+#}
+
+
+
+  <ul class="blog-categories">
+  {% for category in categorys %}
+    <li><a href="{{path('app_categorys_show', {id: category.id , slug: attribute(category, 'nom' ~ app.request.locale) | slugify})}}">{{ attribute(category, 'nom' ~ app.request.locale) }}</a></li>
+  {% endfor %}
+  </ul>

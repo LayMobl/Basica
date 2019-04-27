@@ -1,0 +1,50 @@
+# ./translations/messages.fr.yaml
+# Traduction du contenu statique en francais
+
+footer:
+    titre1: Nous Contacter
+    titre2: Nos Réseaux Sociaux
+    titre3: À propos de nous
+    adresse: Adresse
+    texte1: Une description aléatoire qui parle en détails de notre activité sur les réseaux sociaux.
+    texte2: Une description aléatoire qui parle en détails de notre entreprise et qui explique pourquoi nous sommes les meilleurs.
+
+accueil:
+    titre: Nos projets récents
+    blog: Derniers Articles Du Blog
+    reseau: Dernières News FaceBook/Twitter
+    plus: Lire plus...
+
+portfolio:
+    titre1: Notre Portfolio
+    titre2: Nous sommes les meilleurs
+    titre3: Spécialisés dans la création de theme Wordpress
+    texte: Une description aléatoire qui parle en détails de notre entreprise, qui explique pourquoi nous sommes les meilleurs et pourquoi nous sommes les plus chers.
+    plus: Plus de Projets
+    look: Je regarde
+
+portfolio_detail:
+    titre1: Détails du produit
+    titre2: Un bref apercu
+    titre3: Détails du projet
+    titre4: Projets similaires
+
+tag:
+    titre: Résultat de la recherche du tag
+
+category:
+    titre: Résultat de la recherche de la categories
+
+blog:
+    titre: Notre blog
+    plus: Lire plus
+    previous: Précédent
+    next: Suivant
+
+blog_detail:
+    titre: Article du blog
+    recent: Articles récents
+    categorie: Catégories
+
+contact:
+    titre: Nous contacter

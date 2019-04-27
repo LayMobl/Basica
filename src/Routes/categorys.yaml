@@ -1,0 +1,21 @@
+# ./src/Routes/categorys.yaml
+
+# Route 1: App_categorys_index
+#   /categorys/
+#   > indexAction de CategoryController
+#   Je suis sur la page index des categorys
+index:
+    path: /{_locale}
+    controller: App\Controller\CategoryController::indexAction
+
+# Route 2: app_categorys_show
+#   /categorys/slug
+#    > showAction du CategoryController
+#   ! définir le slug
+#   Je suis sur la page show de la category xxx
+show:
+    path: /{id}/{slug}/{_locale}
+    controller: App\Controller\CategoryController::showAction
+    requirements:
+        id:   '[1-9][0-9]*'
+        slug: '[a-z][a-z0-9\-]*'

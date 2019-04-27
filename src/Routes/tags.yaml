@@ -1,0 +1,21 @@
+# ./src/Routes/tags.yaml
+
+# Route 1: App_tags_index
+#   /tags/
+#   > indexAction de TagController
+#   Je suis sur la page index des tags
+index:
+    path: /{_locale}
+    controller: App\Controller\TagController::indexAction
+
+# Route 2: app_tags_show
+#   /tags/slug
+#    > showAction du TagController
+#   ! définir le slug
+#   Je suis sur la page show de la tag xxx
+show:
+    path: /{id}/{slug}/{_locale}
+    controller: App\Controller\TagController::showAction
+    requirements:
+        id:   '[1-9][0-9]*'
+        slug: '[a-z][a-z0-9\-]*'

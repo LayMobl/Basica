@@ -6,37 +6,97 @@
 
 {% extends 'base.html.twig' %}
 
-  {% block title %}
-    {{ attribute(work, 'nom' ~ app.request.locale) }}
-  {% endblock %}
-
-
+{% block title %}
+  {{ attribute(work, 'nom' ~ app.request.locale) }}
+{% endblock %}
 
 {% block content1 %}
 
+  <div class="section section-breadcrumbs">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>{{ 'portfolio_detail.titre1' | trans }}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
 
-{# CONTENUS COMPLEMENTAIRES #}
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <!-- Product Image & Available Colors -->
+        <div class="col-sm-6">
+          <div class="product-image-large">
+            <img src="{{ asset('img/portfolio/'~ work.image ~ '')}}" alt="Item Name">
+          </div>
+          <div class="colors">
+            <span class="color-white"></span>
+            <span class="color-black"></span>
+            <span class="color-blue"></span>
+            <span class="color-orange"></span>
+            <span class="color-green"></span>
+          </div>
+        </div>
+        <!-- End Product Image & Available Colors -->
+        <!-- Product Summary & Options -->
+        <div class="col-sm-6 product-details">
+          <h2>{{ attribute(work, 'nom' ~ app.request.locale) }}</h2>
+          <h3>{{ 'portfolio_detail.titre2' | trans }}</h3>
+          <p>
+            {{ attribute(work, 'texte' ~ app.request.locale) }}
+          </p>
+          <h3>{{ 'portfolio_detail.titre3' | trans }}</h3>
+          <p>
+            <strong>Client:
+            </strong>{{ work.client.nom }}</p>
+          <p>
+            <strong>Date:
+            </strong>{{ work.date | date('d-m-Y') }}</p>
+          <p>
+            <strong>Tags:
+            </strong>
+            {% for tag in work.tags %}
+                <a href="{{path('app_tags_show', {id: tag.id , slug: attribute(tag, 'nom' ~ app.request.locale) | slugify})}}">{{ attribute(tag, 'nom' ~ app.request.locale) }}</a>
+            {% endfor %}
+          </p>
+        </div>
+        <!-- End Product Summary & Options -->
 
-  {% if page.id == 1 %}
+      </div>
+    </div>
+  </div>
 
-  {{ render(controller('App\\Controller\\WorkController::indexAction',{limit: 3, vue:'slider'})) }}
-
-  {% elseif page.id == 2 %}
-
-  <a class="btn btn-primary" href="{{ path ('app_creatures_add') }}">Ajouter une créature</a>
   <hr>
 
-  {{ render(controller('App\\Controller\\CreatureController::indexAction')) }}
+  <div class="section">
+    <div class="container">
+      <div class="row">
 
+        <div class="section-title">
+          <h1>{{ 'portfolio_detail.titre4' | trans }}</h1>
+        </div>
 
-  {% elseif page.id == 3 %}
+        <ul class="grid cs-style-2">
+          {% for tag in work.tags %}
+          <div class="col-md-3 col-sm-6">
+            <figure>
+              <a href="{{path('app_works_show', {id: work.id , slug: attribute(work, 'nom' ~ app.request.locale) | slugify})}}">
+                <img src="{{ asset('img/portfolio/'~ work.image ~ '')}}" alt="{{'img/portfolio/'~ work.image ~ ''}}">
+              </a>
+              <figcaption>
+                <h3>{{ attribute(work, 'nom' ~ app.request.locale) }}</h3>
+                <span>{{ work.client.nom }}</span>
+                <a href="{{path('app_works_show', {id: work.id , slug: attribute(work, 'nom' ~ app.request.locale) | slugify})}}">{{ 'portfolio.look' | trans }}</a>
+              </figcaption>
+            </figure>
+          </div>
+          {% endfor %}
+        </ul>
 
-  <hr>
-  {{ render(controller('App\\Controller\\FilmController::indexAction')) }}
-
-
-{% endif %}
-
+      </div>
+    </div>
+  </div>
 
 
 {% endblock %}

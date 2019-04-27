@@ -1,0 +1,13 @@
+{#
+  ./templates/posts/index.html.twig
+  Variables disponibles:
+    - posts Array(Page(id, titre, slug, texte, dateCreation))
+#}
+
+
+
+  <ul class="recent-posts">
+  {% for post in posts %}
+    <li><a href="{{path('app_posts_show', {id: post.id , slug: attribute(post, 'nom' ~ app.request.locale) | slugify})}}">{{ attribute(post, 'nom' ~ app.request.locale) }}</a></li>
+  {% endfor %}
+  </ul>

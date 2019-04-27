@@ -1,0 +1,50 @@
+# ./translations/messages.en.yaml
+# Traduction du contenu statique en anglais
+
+footer:
+    titre1: Contact Us
+    titre2: Our Social Networks
+    titre3: About Our Company
+    adresse: Address
+    texte1: Some random text in english describing our social network channels.
+    texte2: Some random text in english describing our company and why we are the best at what we do.
+
+accueil:
+    titre: Our Recent Works
+    blog: Latest Blog Posts
+    reseau: Latest FaceBook/Twitter News
+    plus: Read more...
+
+portfolio:
+    titre1: Our Portfolio
+    titre2: We are leading company
+    titre3: Specializing in Wordpress Theme Development
+    texte: Some random text in english describing our work, why we are the best at what we do and why we are the most expensive.
+    plus: More Works
+    look: Take a look
+
+portfolio_detail:
+    titre1: Product details
+    titre2: Quick Overview
+    titre3: Project Details
+    titre4: Similar Works
+
+tag:
+    titre: Search result with tag
+
+category:
+    titre: Search result with category
+
+blog:
+    titre: Our blog
+    plus: Read more
+    previous: Previous
+    next: Next
+
+blog_detail:
+    titre: Blog post
+    recent: Recent posts
+    categorie: Categories
+
+contact:
+    titre: Get in touch with us

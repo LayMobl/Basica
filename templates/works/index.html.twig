@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h1>Our Portfolio</h1>
+        <h1>{{ 'portfolio.titre1' | trans }}</h1>
       </div>
     </div>
   </div>
@@ -13,11 +13,10 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-        <h2>We are leading company</h2>
-        <h3>Specializing in Wordpress Theme Development</h3>
+        <h2>{{ 'portfolio.titre2' | trans }}</h2>
+        <h3>{{ 'portfolio.titre3' | trans }}</h3>
         <p>
-          Donec elementum mi vitae enim fermentum lobortis. In hac habitasse platea dictumst. Ut pellentesque, orci sed mattis consequat, libero ante lacinia arcu, ac porta lacus urna in lorem. Praesent consectetur tristique augue, eget elementum
-          diam suscipit id. Donec elementum mi vitae enim fermentum lobortis.
+        {{ 'portfolio.texte' | trans }}
         </p>
 
       </div>
@@ -33,11 +32,13 @@
         {% for work in works %}
         <div class="col-md-4 col-sm-6">
           <figure>
-            <img src="{{ asset('img/portfolio/'~ work.image ~ '')}}" alt="{{'img/portfolio/'~ work.image ~ ''}}">
+            <a href="{{path('app_works_show', {id: work.id , slug: attribute(work, 'nom' ~ app.request.locale) | slugify})}}">
+              <img src="{{ asset('img/portfolio/'~ work.image ~ '')}}" alt="{{'img/portfolio/'~ work.image ~ ''}}">
+            </a>
             <figcaption>
               <h3>{{ attribute(work, 'nom' ~ app.request.locale) }}</h3>
               <span>{{ work.client.nom }}</span>
-              <a href="{{path('app_works_show', {id: work.id , slug: attribute(work, 'nom' ~ app.request.locale) | slugify})}}">Take a look</a>
+              <a href="{{path('app_works_show', {id: work.id , slug: attribute(work, 'nom' ~ app.request.locale) | slugify})}}">{{ 'portfolio.look' | trans }}</a>
             </figcaption>
           </figure>
         </div>
@@ -48,7 +49,7 @@
     </div>
 
     <ul class="pager">
-      <li><a href="#">More works</a></li>
+      <li><a href="#">{{ 'portfolio.plus' | trans }}</a></li>
     </ul>
 
   </div>
