@@ -9,33 +9,46 @@
       <div class="col-footer col-md-4 col-sm-4 col-xs-12">
         <h3>{{ 'footer.titre1' | trans }}</h3>
         <p class="contact-us-details">
-            <b>{{ 'footer.adresse' | trans }}:</b> Rue Charles Deliège 9, 4623 Fléron<br/>
-            <b>Tel:</b> +123456789<br/>
-            <b>Fax:</b> +123456789<br/>
-            <b>Email:</b> <a href="mailto:info@yourcompanydomain.com">info@ieps.com</a>
-          </p>
+          <b>{{ 'footer.adresse' | trans }}:</b>
+          Rue Charles Deliège 9, 4623 Fléron<br/>
+          <b>Tel:</b>
+          +123456789<br/>
+          <b>Fax:</b>
+          +123456789<br/>
+          <b>Email:</b>
+          <a href="mailto:info@yourcompanydomain.com">info@ieps.com</a>
+        </p>
       </div>
       <div class="col-footer col-md-4 col-sm-4 col-xs-12">
         <h3>{{ 'footer.titre2' | trans }}</h3>
-      <p>{{ 'footer.texte1' | trans }}</p>
+        <p>{{ 'footer.texte1' | trans }}</p>
         <div>
           <img src="{{ asset('img/icons/facebook.png')}}" width="32" alt="Facebook">
           <img src="{{ asset('img/icons/twitter.png')}}" width="32" alt="Twitter">
           <img src="{{ asset('img/icons/linkedin.png')}}" width="32" alt="LinkedIn">
-        <img src="{{ asset('img/icons/rss.png')}}" width="32" alt="RSS Feed">
-      </div>
+          <img src="{{ asset('img/icons/rss.png')}}" width="32" alt="RSS Feed">
+        </div>
       </div>
       <div class="col-footer col-md-4 col-sm-4 col-xs-12">
         <h3>{{ 'footer.titre3' | trans }}</h3>
-          <p>{{ 'footer.texte2' | trans }}</p>
+        <p>{{ 'footer.texte2' | trans }}</p>
       </div>
 
     </div>
     <div class="row">
       <div class="col-md-12">
         <div class="footer-copyright">
-          &copy; 2019 <a href="http://www.vactualart.com/portfolio-item/basica-a-free-html5-template/">Basica</a> Bootstrap HTML Template. By <a href="http://www.vactualart.com">Vactual Art</a>.
-          | <a href="{{path('fos_user_security_login')}}">Administration</a>
+          &copy; 2019
+          <a href="http://www.vactualart.com/portfolio-item/basica-a-free-html5-template/">Basica</a>
+          Bootstrap HTML Template. By
+          <a href="http://www.vactualart.com">Vactual Art</a>. |
+          {% if is_granted('ROLE_ADMIN') %}
+            <a href="{{path('easyadmin')}}">Administration</a>
+          {% elseif is_granted('ROLE_USER') %}
+            <a href="{{path('app_pages_redirect')}}">Administration</a>
+          {% else %}
+            <a href="{{path('fos_user_security_login')}}">Administration</a>
+          {% endif %}
         </div>
       </div>
     </div>

@@ -17,5 +17,11 @@
     </ul>
 </div>
 <div class="float-right">
+  {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+      <span style="color:white;"> {{ 'hello' | trans }} User - </span> <a href="{{path('fos_user_security_logout')}}" >{{ 'logout' | trans }}</a> |
+  {% else %}
+      <a href="{{path('fos_user_security_login')}}" >{{ 'login' | trans }}</a> |
+  {% endif %}
+
   <a href="{{path('app_homepage', {_locale: 'fr'})}}" >FR</a> | <a href="{{path('app_homepage', {_locale: 'en'})}}">EN</a>
 </div>

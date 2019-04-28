@@ -93,3 +93,9 @@ ID: Numéro
 Client: Client
 Nom: Nom
 Vitrine: Vitrine
+login: Connexion
+hello: Bonjour
+logout: Se déconnecter
+rights: Vous n'avez pas les droits nécéssaires pour accéder à cette partie du site
+access: Erreur d'accès
+redirect: Vous allez être redirigé vers la page d'acceuil dans 5 secondes...

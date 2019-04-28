@@ -1,0 +1,32 @@
+
+{% extends 'base.html.twig' %}
+{% block meta %}<meta http-equiv="refresh" content="5; url={{ path('app_homepage') }}">{% endblock %}
+{% block title %}
+  Connexion au Back Office
+{% endblock %}
+
+{% block content1 %}
+
+<div class="section section-breadcrumbs">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>{{ 'access' | trans }}</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div>
+          <h2>{{ 'rights' | trans }}</h2>
+          <br>
+          <h4>{{ 'redirect' | trans }} </h4>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+{% endblock %}

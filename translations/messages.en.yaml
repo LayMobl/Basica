@@ -94,3 +94,9 @@ ID: Number
 Client: Client
 Nom: Name
 Vitrine: Highlight
+login: Log in
+hello: Hello
+logout: Log out
+rights: You don't have the correct rights to access this part of the website
+access: Access Denied
+redirect: You'll be redirected to the homepage in 5 seconds...

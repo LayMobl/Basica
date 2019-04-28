@@ -6,6 +6,7 @@
 <html lang="en">
 
 <head>
+  {% block meta %}{% endblock %}
   {% include 'partials/head.html.twig' with {
     title : block('title')
   } %}

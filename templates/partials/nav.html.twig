@@ -15,7 +15,6 @@
               <a class="navbar-brand" href="{{path('app_homepage')}}"><img src="{{asset('img/logo.png')}}" alt="Basica"></a>
           </div>
 
-          {# On envoit le nom de la route et les paramètres  #}
            {{ render(controller('App\\Controller\\PageController::indexAction',{
 
              '_route': app.request.get('_route'),

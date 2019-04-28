@@ -10,3 +10,10 @@ show:
     requirements:
         id:   '[1-9][0-9]*'
         slug: '[a-z][a-z0-9\-]*'
+
+redirect:
+    path:         /redirect/{_locale}
+    controller:   Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults:
+        template: pages/redirect.html.twig
+    methods: GET
