@@ -45,29 +45,7 @@
         <!-- Pagination -->
 
         <div class="pagination-wrapper ">
-          <ul class="pagination pagination-sm">
-            <li class="disabled">
-              <a href="#">{{ 'blog.previous' | trans }}</a>
-            </li>
-            <li class="active">
-              <a href="#">1</a>
-            </li>
-            <li>
-              <a href="#">2</a>
-            </li>
-            <li>
-              <a href="#">3</a>
-            </li>
-            <li>
-              <a href="#">4</a>
-            </li>
-            <li>
-              <a href="#">5</a>
-            </li>
-            <li>
-              <a href="#">{{ 'blog.next' | trans }}</a>
-            </li>
-          </ul>
+          {{ knp_pagination_render(posts) }}
         </div>
 
       </div>

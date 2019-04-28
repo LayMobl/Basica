@@ -5,22 +5,41 @@ easy_admin:
 #         List the entity class name you want to manage
         Post:
             class: App\Entity\Post
+            list:
+                fields:
+                  - {property: 'id'}
+                  - {property: 'nomfr'}
+                  - {property: 'nomen'}
+                  - {property: 'date'}
+                  - {property: 'image'}
         Page:
             class: App\Entity\Page
         Category:
             class: App\Entity\Category
+            list:
+                fields:
+                  - {property: 'id'}
+                  - {property: 'nomfr'}
+                  - {property: 'nomen'}
         Client:
             class: App\Entity\Client
         Tag:
             class: App\Entity\Tag
+            list:
+                fields:
+                  - {property: 'id'}
+                  - {property: 'nomfr'}
+                  - {property: 'nomen'}
         User:
             class: App\Entity\User
         Work:
             class: App\Entity\Work
 
     design:
+        brand_color: '#AEC62C'
         menu:
           - { entity: 'Post', default: true }
           - Work
           - Tag
           - Category
+          - Client

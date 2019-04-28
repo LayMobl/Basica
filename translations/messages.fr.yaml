@@ -59,6 +59,10 @@ security:
         remember_me: Se rappeler de moi
         submit: Valider
 
+layout:
+    logout: Se déconnecter
+    logged_in_as: Connecté en tant que
+
 Post: Article
 Work: Projet
 Tag: Tag
@@ -81,3 +85,11 @@ Hour: Heure
 Minute: Minute
 Image: Image
 Categories: Catégories
+Slugfr: Slug francais
+Slugen: Slug anglais
+Posts: Articles
+Works: Projets
+ID: Numéro
+Client: Client
+Nom: Nom
+Vitrine: Vitrine

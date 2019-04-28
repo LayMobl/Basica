@@ -58,6 +58,11 @@ class Work
      */
     private $tags;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $vitrine;
+
     public function __construct()
     {
         $this->tags = new ArrayCollection();
@@ -182,4 +187,16 @@ class Work
 	{
 		return $this->nomfr;
 	}
+
+    public function getVitrine(): ?bool
+    {
+        return $this->vitrine;
+    }
+
+    public function setVitrine(?bool $vitrine): self
+    {
+        $this->vitrine = $vitrine;
+
+        return $this;
+    }
 }

@@ -19,7 +19,7 @@
 
   {% if page.id == 1 %}
 
-  {{ render(controller('App\\Controller\\WorkController::indexAction',{limit: 3, vue:'slider'})) }}
+  {{ render(controller('App\\Controller\\WorkController::sliderAction',{vue:'slider'})) }}
   {{ render(controller('App\\Controller\\WorkController::indexAction',{limit: 6, vue:'liste'})) }}
   <hr>
   <div class="section">
@@ -62,7 +62,7 @@
 
   {% elseif page.id == 3 %}
 
-  {{ render(controller('App\\Controller\\PostController::indexAction', {limit:4})) }}
+  {{ render(controller('App\\Controller\\PostController::indexAction', {vue: 'index', limit:4})) }}
 
 
   {% elseif page.id == 4 %}

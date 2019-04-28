@@ -77,22 +77,7 @@
           <h1>{{ 'portfolio_detail.titre4' | trans }}</h1>
         </div>
 
-        <ul class="grid cs-style-2">
-          {% for tag in work.tags %}
-          <div class="col-md-3 col-sm-6">
-            <figure>
-              <a href="{{path('app_works_show', {id: work.id , slug: attribute(work, 'nom' ~ app.request.locale) | slugify})}}">
-                <img src="{{ asset('img/portfolio/'~ work.image ~ '')}}" alt="{{'img/portfolio/'~ work.image ~ ''}}">
-              </a>
-              <figcaption>
-                <h3>{{ attribute(work, 'nom' ~ app.request.locale) }}</h3>
-                <span>{{ work.client.nom }}</span>
-                <a href="{{path('app_works_show', {id: work.id , slug: attribute(work, 'nom' ~ app.request.locale) | slugify})}}">{{ 'portfolio.look' | trans }}</a>
-              </figcaption>
-            </figure>
-          </div>
-          {% endfor %}
-        </ul>
+        
 
       </div>
     </div>

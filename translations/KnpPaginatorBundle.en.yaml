@@ -1,0 +1,5 @@
+# ./translations/KnpPaginatorBundle.en.yaml
+# Traduction du contenu statique en anglais
+
+label_next: Next
+label_previous: Previous

@@ -1,0 +1,5 @@
+# ./translations/KnpPaginatorBundle.fr.yaml
+# Traduction du contenu statique en francais
+
+label_next: Suivant
+label_previous: Précédent

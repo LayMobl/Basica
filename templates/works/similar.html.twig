@@ -4,29 +4,7 @@
     - page pages(id, titre, slug, texte, dateCreation)
 #}
 
-{% extends 'base.html.twig' %}
-
-{% block title %}
-  {{ attribute(tag, 'nom' ~ app.request.locale) }}
-{% endblock %}
-
-{% block content1 %}
-  <div class="section section-breadcrumbs">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h1>{{ 'tag.titre' | trans }}:
-            {{ attribute(tag, 'nom' ~ app.request.locale) }}</h1>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="container">
-      <div class="row">
-
-        <ul class="grid cs-style-3">
+        <ul class="grid cs-style-2">
           {% for work in tag.works %}
             <div class="col-md-4 col-sm-6">
               <figure>
@@ -42,9 +20,3 @@
             </div>
           {% endfor %}
         </ul>
-
-      </div>
-      </div>
-      </div>
-
-    {% endblock %}

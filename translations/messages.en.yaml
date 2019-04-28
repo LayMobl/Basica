@@ -50,7 +50,7 @@ contact:
     titre: Get in touch with us
 
 connexion:
-    titre: Back Office connexion
+    titre: Connect to the Back Office
 
 security:
     login:
@@ -58,6 +58,11 @@ security:
         password: Password
         remember_me: Remember Me
         submit: Submit
+
+layout:
+    logout: Log out
+    logged_in_as: Logged in as
+
 
 Post: Post
 Work: Work
@@ -81,3 +86,11 @@ Hour: Hour
 Minute: Minute
 Image: Image
 Categories: Categories
+Slugfr: Slug french
+Slugen: Slug english
+Posts: Posts
+Works: Works
+ID: Number
+Client: Client
+Nom: Name
+Vitrine: Highlight

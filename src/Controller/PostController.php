@@ -7,6 +7,8 @@ use Ieps\Core\GenericController;
 use App\Entity\Post;
 use App\Form\PostType;
 use Symfony\Component\HttpFoundation\Request;
+use Knp\Component\Pager\PaginatorInterface;
+
 
 /**
  * Class PostController
@@ -21,8 +23,13 @@ class PostController extends GenericController {
      * @return \Symfony\Component\HttpFoundation\Response
      * Vue index des posts avec sa variable
      */
-    public function indexAction(int $limit = null, string $vue = 'index'){
-      $posts = $this->_repository->findBy([], ["date" => "DESC"], $limit);
+    public function indexAction(Request $request, PaginatorInterface $paginator, int $limit = null, string $vue = 'index'){
+      $allPosts = $this->_repository->findBy([], ["date" => "DESC"]);
+      $posts = $paginator->paginate(
+        $allPosts,
+        $request->query->getInt('page', 1),
+        $limit
+      );
       return $this->render('posts/'. $vue .'.html.twig',[
         'posts' => $posts
       ]);
