@@ -1,6 +1,6 @@
 
 {% extends 'base.html.twig' %}
-{% block meta %}<meta http-equiv="refresh" content="5; url={{ path('app_homepage') }}">{% endblock %}
+{% block meta %}<meta http-equiv="refresh" content="5; url={{ path('app_homepage',{_locale: app.request.locale}) }}">{% endblock %}
 {% block title %}
   Connexion au Back Office
 {% endblock %}

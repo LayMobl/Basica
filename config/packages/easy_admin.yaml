@@ -5,6 +5,20 @@ easy_admin:
 #         List the entity class name you want to manage
         Post:
             class: App\Entity\Post
+            # form:
+            #     fields:
+            #         - {property: 'nomfr'}
+            #         - {property: 'nomen'}
+            #         - {property: 'titreonefr', type: 'text'}
+            #         - {property: 'texteonefr', type: 'fos_ckeditor'}
+            #         - {property: 'titreoneen', type: 'text'}
+            #         - {property: 'texteoneen', type: 'fos_ckeditor'}
+            #         - {property: 'titretwofr', type: 'text'}
+            #         - {property: 'textetwofr', type: 'fos_ckeditor'}
+            #         - {property: 'titretwoen', type: 'text'}
+            #         - {property: 'textetwoen', type: 'fos_ckeditor'}
+            #         - {property: 'date'}
+            #         - {property: 'image'}
             list:
                 fields:
                   - {property: 'id'}

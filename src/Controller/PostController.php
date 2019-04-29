@@ -8,6 +8,7 @@ use App\Entity\Post;
 use App\Form\PostType;
 use Symfony\Component\HttpFoundation\Request;
 use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
 /**
@@ -27,7 +28,7 @@ class PostController extends GenericController {
       $allPosts = $this->_repository->findBy([], ["date" => "DESC"]);
       $posts = $paginator->paginate(
         $allPosts,
-        $request->query->getInt('page', 1),
+        $request->query->getInt('page', substr($_SERVER["QUERY_STRING"],5) ),
         $limit
       );
       return $this->render('posts/'. $vue .'.html.twig',[

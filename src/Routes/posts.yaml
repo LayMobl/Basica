@@ -8,6 +8,7 @@ index:
     path: /{_locale}
     controller: App\Controller\PostController::indexAction
 
+
 # Route 2: app_posts_show
 #   /posts/slug
 #    > showAction du PostController

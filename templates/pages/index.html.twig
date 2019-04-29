@@ -18,7 +18,7 @@
 </div>
 <div class="float-right">
   {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-      <span style="color:white;"> {{ 'hello' | trans }} User - </span> <a href="{{path('fos_user_security_logout')}}" >{{ 'logout' | trans }}</a> |
+      <span style="color:white;"> {{ 'hello' | trans }} {{ app.user.username }} - </span> <a href="{{path('fos_user_security_logout')}}" >{{ 'logout' | trans }}</a> |
   {% else %}
       <a href="{{path('fos_user_security_login')}}" >{{ 'login' | trans }}</a> |
   {% endif %}
