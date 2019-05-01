@@ -5,27 +5,29 @@ easy_admin:
 #         List the entity class name you want to manage
         Post:
             class: App\Entity\Post
-            # form:
-            #     fields:
-            #         - {property: 'nomfr'}
-            #         - {property: 'nomen'}
-            #         - {property: 'titreonefr', type: 'text'}
-            #         - {property: 'texteonefr', type: 'fos_ckeditor'}
-            #         - {property: 'titreoneen', type: 'text'}
-            #         - {property: 'texteoneen', type: 'fos_ckeditor'}
-            #         - {property: 'titretwofr', type: 'text'}
-            #         - {property: 'textetwofr', type: 'fos_ckeditor'}
-            #         - {property: 'titretwoen', type: 'text'}
-            #         - {property: 'textetwoen', type: 'fos_ckeditor'}
-            #         - {property: 'date'}
-            #         - {property: 'image'}
+            form:
+                fields:
+                    - {property: 'nomfr'}
+                    - {property: 'nomen'}
+                    - {property: 'titreonefr', type: 'text'}
+                    - {property: 'texteonefr', type: 'textarea'}
+                    - {property: 'titreoneen', type: 'text'}
+                    - {property: 'texteoneen', type: 'textarea'}
+                    - {property: 'titretwofr', type: 'text'}
+                    - {property: 'textetwofr', type: 'textarea'}
+                    - {property: 'titretwoen', type: 'text'}
+                    - {property: 'textetwoen', type: 'textarea'}
+                    - {property: 'date', type: 'datetime'}
+                    - {property: 'categories'}
+                    - { property: 'imageFile', type: 'vich_image'}
             list:
                 fields:
                   - {property: 'id'}
                   - {property: 'nomfr'}
                   - {property: 'nomen'}
                   - {property: 'date'}
-                  - {property: 'image'}
+                  - {property: 'categories'}
+
         Page:
             class: App\Entity\Page
         Category:
@@ -48,6 +50,25 @@ easy_admin:
             class: App\Entity\User
         Work:
             class: App\Entity\Work
+            list:
+                fields:
+                    - {property: 'nomfr'}
+                    - {property: 'nomen'}
+                    - {property: 'date'}
+                    - {property: 'vitrine'}
+                    - {property: 'client'}
+                    - {property: 'tags'}
+            form:
+                fields:
+                    - {property: 'nomfr'}
+                    - {property: 'textefr', type: 'textarea'}
+                    - {property: 'nomen'}
+                    - {property: 'texteen', type: 'textarea'}
+                    - {property: 'date', type: 'datetime'}
+                    - {property: 'vitrine'}
+                    - { property: 'imageFile', type: 'vich_image'}
+                    - {property: 'client'}
+                    - {property: 'tags'}
 
     design:
         brand_color: '#AEC62C'

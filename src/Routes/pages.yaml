@@ -16,4 +16,4 @@ redirect:
     controller:   Symfony\Bundle\FrameworkBundle\Controller\TemplateController
     defaults:
         template: pages/redirect.html.twig
-    methods: GET
+    methods: [GET]

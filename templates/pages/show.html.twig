@@ -49,7 +49,7 @@
 
   {% elseif page.id == 3 %}
 
-  {{ render(controller('App\\Controller\\PostController::indexAction', {vue: 'index', limit:4, page:1})) }}
+  {{ render(controller('App\\Controller\\PostController::indexActionPage', {vue: 'index', limit:4})) }}
 
 
   {% elseif page.id == 4 %}

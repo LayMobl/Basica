@@ -10,7 +10,7 @@
   <h2>{{ 'accueil.blog' | trans }}</h2>
   {% for post in posts %}
   <div class="row">
-    <div class="col-xs-4"><a href="{{path('app_posts_show', {id: post.id , slug: attribute(post, 'nom' ~ app.request.locale) | slugify})}}"><img src="{{ asset('img/blog/'~ post.image ~ '')}}" alt="{{ attribute(post, 'nom' ~ app.request.locale) }}"></a></div>
+    <div class="col-xs-4"><a href="{{path('app_posts_show', {id: post.id , slug: attribute(post, 'nom' ~ app.request.locale) | slugify})}}"><img src="{{ asset('img/uploads/'~ post.imageName ~ '')}}" alt="{{ attribute(post, 'nom' ~ app.request.locale) }}"></a></div>
       <div class="col-xs-8">
         <div class="caption"><a href="{{path('app_posts_show', {id: post.id , slug: attribute(post, 'nom' ~ app.request.locale) | slugify})}}">{{ attribute(post, 'nom' ~ app.request.locale) }}</a></div>
         <div class="date">{{ post.date | date('d-m-Y') }}</div>

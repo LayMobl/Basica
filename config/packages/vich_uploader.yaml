@@ -1,0 +1,19 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+       posts:
+           uri_prefix: '/PROJECTS/BASICA_portfolio/Basica/public/img/uploads'
+           upload_destination: '%kernel.project_dir%/public/img/uploads'
+
+           inject_on_load: false
+           delete_on_update: true
+           delete_on_remove: true
+
+       works:
+           uri_prefix: '/PROJECTS/BASICA_portfolio/Basica/public/img/uploads'
+           upload_destination: '%kernel.project_dir%/public/img/uploads'
+
+           inject_on_load: false
+           delete_on_update: true
+           delete_on_remove: true

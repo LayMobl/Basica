@@ -31,7 +31,7 @@
             <div class="col-md-4 col-sm-6">
               <figure>
                 <a href="{{path('app_works_show', {id: work.id , slug: attribute(work, 'nom' ~ app.request.locale) | slugify})}}">
-                  <img src="{{ asset('img/portfolio/'~ work.image ~ '')}}" alt="{{'img/portfolio/'~ work.image ~ ''}}">
+                  <img src="{{ asset('img/uploads/'~ work.imageName ~ '')}}" alt="{{'img/uploads/'~ work.imageName ~ ''}}">
                 </a>
                 <figcaption>
                   <h3>{{ attribute(work, 'nom' ~ app.request.locale) }}</h3>
