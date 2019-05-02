@@ -14,7 +14,8 @@
       <div class="col-xs-8">
         <div class="caption"><a href="{{path('app_posts_show', {id: post.id , slug: attribute(post, 'nom' ~ app.request.locale) | slugify})}}">{{ attribute(post, 'nom' ~ app.request.locale) }}</a></div>
         <div class="date">{{ post.date | date('d-m-Y') }}</div>
-        <div class="intro">{{attribute(post, 'texteone' ~ app.request.locale) | slice(0,150)}}...<a href="{{path('app_posts_show', {id: post.id , slug: attribute(post, 'nom' ~ app.request.locale) | slugify})}}">{{ 'accueil.plus' | trans }}</a></div>
+        <div class="intro">{{attribute(post, 'texteone' ~ app.request.locale) | slice(0,150) | striptags }}...
+          <a href="{{path('app_posts_show', {id: post.id , slug: attribute(post, 'nom' ~ app.request.locale) | slugify})}}">{{ 'accueil.plus' | trans}}</a></div>
       </div>
     </div>
 

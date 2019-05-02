@@ -5,8 +5,11 @@
 #   > indexAction de PostController
 #   Je suis sur la page index des posts
 index:
-    path: /{_locale}
-    controller: App\Controller\PostController::indexAction
+    path: /{_locale}/{page}
+    controller: App\Controller\PostController::indexActionPage
+    methods: [GET]
+    defaults:
+       page: 1
 
 
 # Route 2: app_posts_show

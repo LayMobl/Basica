@@ -19,3 +19,7 @@ show:
     requirements:
         id:   '[1-9][0-9]*'
         slug: '[a-z][a-z0-9\-]*'
+
+more:
+    path: /more/{_locale}
+    controller: App\Controller\WorkController::moreAction

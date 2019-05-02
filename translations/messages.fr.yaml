@@ -13,7 +13,7 @@ accueil:
     titre: Nos projets récents
     blog: Derniers Articles Du Blog
     reseau: Dernières News FaceBook/Twitter
-    plus: Lire plus...
+    plus: Lire plus
 
 portfolio:
     titre1: Notre Portfolio
@@ -108,3 +108,5 @@ logout: Se déconnecter
 rights: Vous n'avez pas les droits nécéssaires pour accéder à cette partie du site
 access: Erreur d'accès
 redirect: Vous allez être redirigé vers la page d'acceuil dans 5 secondes...
+Texteen: Texte en anglais
+Textefr: Texte en francais

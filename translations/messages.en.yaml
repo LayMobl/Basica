@@ -13,7 +13,7 @@ accueil:
     titre: Our Recent Works
     blog: Latest Blog Posts
     reseau: Latest FaceBook/Twitter News
-    plus: Read more...
+    plus: Read more
 
 portfolio:
     titre1: Our Portfolio
@@ -76,7 +76,7 @@ Titre oneen: First title in english
 Titre twoen: Second title in english
 Texte onefr: First text in french
 Texte twofr: Second text in french
-Texte oneen: First text in englishs
+Texte oneen: First text in english
 Texte twoen: Second text in english
 Titreonefr: First title in french
 Titretwofr: Second title in french
@@ -84,7 +84,7 @@ Titreoneen: First title in english
 Titretwoen: Second title in english
 Texteonefr: First text in french
 Textetwofr: Second text in french
-Texteoneen: First text in englishs
+Texteoneen: First text in english
 Textetwoen: Second text in english
 Image file: Fichier image
 Date: Date
@@ -109,3 +109,5 @@ logout: Log out
 rights: You don't have the correct rights to access this part of the website
 access: Access Denied
 redirect: You'll be redirected to the homepage in 5 seconds...
+Texteen: Text in english
+Textefr: Text in french

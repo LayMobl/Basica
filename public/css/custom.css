@@ -210,6 +210,8 @@
 	max-width: 100%;
 	display: block;
 	position: relative;
+  height: 215px;
+  margin: auto;
 }
 
 .grid figcaption {

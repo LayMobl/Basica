@@ -35,9 +35,16 @@ class WorkController extends GenericController {
       ]);
     }
 
-    public function similarAction(array $array, string $vue) {
-        $works = $this->_repository->findByTags($array);
+    public function similarAction(string $vue) {
+        $works = $this->_repository->findByTags();
         return $this->render('works/'. $vue .'.html.twig',[
+          'works' => $works
+        ]);
+    }
+
+    public function moreAction(string $vue = 'more', int $limit = null, int $offest = null) {
+        $works = $this->_repository->findBy([],["date" => "DESC"], $limit = 6, $offset = 6);
+        return $this->render('works/'.$vue.'.html.twig',[
           'works' => $works
         ]);
     }

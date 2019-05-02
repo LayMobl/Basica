@@ -10,14 +10,13 @@ easy_admin:
                     - {property: 'nomfr'}
                     - {property: 'nomen'}
                     - {property: 'titreonefr', type: 'text'}
-                    - {property: 'texteonefr', type: 'textarea'}
+                    - {property: 'texteonefr', type: 'fos_ckeditor'}
                     - {property: 'titreoneen', type: 'text'}
-                    - {property: 'texteoneen', type: 'textarea'}
+                    - {property: 'texteoneen', type: 'fos_ckeditor'}
                     - {property: 'titretwofr', type: 'text'}
-                    - {property: 'textetwofr', type: 'textarea'}
+                    - {property: 'textetwofr', type: 'fos_ckeditor'}
                     - {property: 'titretwoen', type: 'text'}
-                    - {property: 'textetwoen', type: 'textarea'}
-                    - {property: 'date', type: 'datetime'}
+                    - {property: 'textetwoen', type: 'fos_ckeditor'}
                     - {property: 'categories'}
                     - { property: 'imageFile', type: 'vich_image'}
             list:
@@ -61,10 +60,9 @@ easy_admin:
             form:
                 fields:
                     - {property: 'nomfr'}
-                    - {property: 'textefr', type: 'textarea'}
+                    - {property: 'textefr', type: 'fos_ckeditor'}
                     - {property: 'nomen'}
-                    - {property: 'texteen', type: 'textarea'}
-                    - {property: 'date', type: 'datetime'}
+                    - {property: 'texteen', type: 'fos_ckeditor'}
                     - {property: 'vitrine'}
                     - { property: 'imageFile', type: 'vich_image'}
                     - {property: 'client'}

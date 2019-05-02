@@ -42,9 +42,9 @@
             </div>
             <div class="single-post-content">
               <h3>{{ attribute(post, 'titreone' ~ app.request.locale) }}</h3>
-              <p>{{ attribute(post, 'texteone' ~ app.request.locale) }}</p>
+              <p>{{ attribute(post, 'texteone' ~ app.request.locale) | raw }}</p>
               <h3>{{ attribute(post, 'titretwo' ~ app.request.locale) }}</h3>
-              <p>{{ attribute(post, 'textetwo' ~ app.request.locale) }}</p>
+              <p>{{ attribute(post, 'textetwo' ~ app.request.locale) | raw }}</p>
             </div>
           </div>
         </div>

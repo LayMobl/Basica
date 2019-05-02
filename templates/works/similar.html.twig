@@ -4,9 +4,9 @@
     - page pages(id, titre, slug, texte, dateCreation)
 #}
 
-        <ul class="grid cs-style-2">
+        <ul class="grid cs-style-2 work-list">
           {% for work in tag.works %}
-            <div class="col-md-4 col-sm-6">
+            <div class="col-md-4 col-sm-6 work-preview">
               <figure>
                 <a href="{{path('app_works_show', {id: work.id , slug: attribute(work, 'nom' ~ app.request.locale) | slugify})}}">
                   <img src="{{ asset('img/uploads/'~ work.imageName ~ '')}}" alt="{{'img/uploads/'~ work.imageName ~ ''}}">

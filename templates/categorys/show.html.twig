@@ -45,7 +45,7 @@
 
               <div class="single-post-content">
                 <p>
-                  {{attribute(post, 'texteone' ~ app.request.locale) | slice(0,250)}}...
+                  {{attribute(post, 'texteone' ~ app.request.locale) | slice(0,250) | raw }}
                 </p>
                 <a href="{{path('app_posts_show', {id: post.id , slug: attribute(post, 'nom' ~ app.request.locale) | slugify})}}" class="btn">{{ 'blog.plus' | trans }}</a>
               </div>

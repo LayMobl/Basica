@@ -19,22 +19,22 @@ class WorkRepository extends ServiceEntityRepository
         parent::__construct($registry, Work::class);
     }
 
-    public function findByTags(array $array)
-    {
-         $qb=$this->createQueryBuilder('w')
-             ->select('w')
-             ->leftJoin('w.tags','tags')
-             ->addSelect('tags','w');
-         if(is_iterable($array)){
-            foreach ($array as $value) {
-                $qb->andWhere(':val MEMBER OF w.tags')->setParameter('val', $value);
-            }
-        }else{
-             $qb
-             ->andWhere(':val MEMBER OF w.tags')->setParameter('val', $array);
-         }
-            return $qb->getQuery() ->getResult();
-    }
+    // public function findByTags()
+    // {
+    //      $qb=$this->createQueryBuilder('w')
+    //          ->select('w')
+    //          ->innerJoin('d.tags', 't1', Join::WITH, 't1.label = :tag1');
+    //          ->addSelect('tags','w');
+    //      if(is_iterable($array)){
+    //         foreach ($array as $value) {
+    //             $qb->andWhere(':val MEMBER OF w.tags')->setParameter('val', $value);
+    //         }
+    //     }else{
+    //          $qb
+    //          ->andWhere(':val MEMBER OF w.tags')->setParameter('val', $array);
+    //      }
+    //         return $qb->getQuery() ->getResult();
+    // }
 
     // /**
     //  * @return Work[] Returns an array of Work objects

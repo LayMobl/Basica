@@ -69,7 +69,7 @@ class Work
      * @var \DateTime
      */
     private $updatedAt;
-    
+
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Client", inversedBy="works")
      */
@@ -88,6 +88,7 @@ class Work
     public function __construct()
     {
         $this->tags = new ArrayCollection();
+        $this->date = new \DateTime('now');
     }
 
     public function getId(): ?int
@@ -150,7 +151,7 @@ class Work
 
     public function setDate(\DateTimeInterface $date): self
     {
-        $this->date = $date;
+        $this->date = new \DateTime('now');
 
         return $this;
     }

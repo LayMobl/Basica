@@ -22,7 +22,7 @@
               </div>
 
               <div class="single-post-image">
-                <img src="{{ asset('img/uploads/'~ post.imageName ~ '')}}" alt="{{ attribute(post, 'nom' ~ app.request.locale) }}">
+                <img class="thumbnail" src="{{ asset('img/uploads/'~ post.imageName ~ '')}}" alt="{{ attribute(post, 'nom' ~ app.request.locale) }}">
               </div>
 
               <div class="single-post-info">
@@ -33,7 +33,7 @@
 
               <div class="single-post-content">
                 <p>
-                  {{attribute(post, 'texteone' ~ app.request.locale) | slice(0,250)}}...
+                  {{attribute(post, 'texteone' ~ app.request.locale) | slice(0,200) | raw | striptags }}
                 </p>
                 <a href="{{path('app_posts_show', {id: post.id , slug: attribute(post, 'nom' ~ app.request.locale) | slugify})}}" class="btn">{{ 'blog.plus' | trans }}</a>
               </div>
@@ -44,7 +44,7 @@
 
         <!-- Pagination -->
 
-        <div class="pagination-wrapper ">
+        <div class="pagination-wrapper col-sm-12">
           {{ knp_pagination_render(posts) }}
         </div>
 

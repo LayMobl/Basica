@@ -19,7 +19,7 @@
                             <div class="col-sm-12">
                                 <div class="carousel-content centered">
                                     <h2 class="animation animated-item-1">{{attribute(work, 'nom' ~ app.request.locale)}}</h2>
-                                    <p class="animation animated-item-2">{{attribute(work, 'texte' ~ app.request.locale)}}</p>
+                                    <p class="animation animated-item-2">{{attribute(work, 'texte' ~ app.request.locale) | raw }}</p>
                                 </div>
                             </div>
                         </div>
