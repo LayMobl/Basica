@@ -45,7 +45,6 @@ class WorkController extends GenericController {
     public function moreAction(string $vue = 'more', int $limit = null, Request $request) {
         $offset = $request->request->get('offset');
         $works = $this->_repository->findBy([], ["date" => "DESC"],$limit=6,$offset);
-        var_dump($offset);
         return $this->render('works/'.$vue.'.html.twig',[
           'works' => $works
         ]);
