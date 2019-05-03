@@ -8,7 +8,7 @@
         e.preventDefault();
 
 
-        var nbreProjets = $('.work-preview').lenght;
+        var nbreProjets = $('.work-preview').length;
         var url = $(this).attr('data-url');
 
         $.ajax({

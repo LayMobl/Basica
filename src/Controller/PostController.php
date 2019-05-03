@@ -31,10 +31,11 @@ class PostController extends GenericController {
      * Vue index des posts avec sa variable
      */
     public function indexActionPage(Request $request, PaginatorInterface $paginator, int $limit = null, string $vue = 'index'){
+      $request = Request::createFromGlobals();
       $allPosts = $this->_repository->findBy([], ["date" => "DESC"]);
       $posts = $paginator->paginate(
         $allPosts,
-        $request->query->getInt('page', substr($_SERVER["QUERY_STRING"],5) ),
+        $request->query->getInt('page', 1),
         $limit
       );
       return $this->render('posts/'. $vue .'.html.twig',[
