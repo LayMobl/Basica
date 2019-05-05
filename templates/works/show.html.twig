@@ -77,7 +77,7 @@
           <h1>{{ 'portfolio_detail.titre4' | trans }}</h1>
         </div>
 
-        
+        {{ render(controller('App\\Controller\\WorkController::similarAction', {'entity':work, vue: 'similar', id: work.id})) }}
 
       </div>
     </div>
