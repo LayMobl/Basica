@@ -1,7 +1,7 @@
 # ./src/Routes/pages.yaml
 
 # Route 1: app_pages_show
-#   /pages/slug
+#   /pages/slug/locale
 #    > showAction du PageController
 #   Je suis sur la page show de la page xxx
 show:
@@ -11,6 +11,10 @@ show:
         id:   '[1-9][0-9]*'
         slug: '[a-z][a-z0-9\-]*'
 
+# Route 2: app_pages_redirect
+#   /redirect/locale
+#    > showAction du PageController
+#   Je suis sur la page show de la page de redirection
 redirect:
     path:         /redirect/{_locale}
     controller:   Symfony\Bundle\FrameworkBundle\Controller\TemplateController

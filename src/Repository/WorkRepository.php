@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Work;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+use App\Entity\Tag;
 
 /**
  * @method Work|null find($id, $lockMode = null, $lockVersion = null)
@@ -19,51 +20,33 @@ class WorkRepository extends ServiceEntityRepository
         parent::__construct($registry, Work::class);
     }
 
-    public function findByTags(object $tags, int $id)
+    /**
+     * @param $tags
+     * @param int $id
+     * @return mixed
+     * Renvoie la liste des works ayant le meme tag
+     */
+    public function findByTags($tags, int $id)
     {
          $qb=$this->createQueryBuilder('w')
              ->select('w')
              ->leftJoin('w.tags','tags')
              ->addSelect('tags','w');
+         // Si tags dispose de plusieurs enregitrements
          if(is_iterable($tags)){
             foreach ($tags as $tag) {
+                // Je sélectionne les projets ayant les meme tags sauf le projet en show
                 $qb->where($qb->expr()->notIn('w.id', $id))
-                   ->andWhere(':val MEMBER OF w.tags')->setParameter('val', $tag);
+                   ->andWhere(':tag MEMBER OF w.tags')->setParameter('tag', $tag);
 
             }
+            // Sinon j'affiche le work ayant le même tag
         }else{
+             // Je sélectionne le projet ayant les meme tags sauf le projet en show
              $qb->where($qb->expr()->notIn('w.id', $id))
-                ->andWhere(':val MEMBER OF w.tags')->setParameter('val', $tags);
+                ->andWhere(':tag MEMBER OF w.tags')->setParameter('tag', $tags);
          }
-            return $qb->getQuery() ->getResult();
+            return $qb->getQuery()->getResult();
     }
 
-    // /**
-    //  * @return Work[] Returns an array of Work objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('w')
-            ->andWhere('w.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('w.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?Work
-    {
-        return $this->createQueryBuilder('w')
-            ->andWhere('w.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

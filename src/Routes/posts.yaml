@@ -1,7 +1,7 @@
 # ./src/Routes/posts.yaml
 
 # Route 1: App_posts_index
-#   /posts/
+#   /posts/locale/?page=xxx
 #   > indexAction de PostController
 #   Je suis sur la page index des posts
 index:
@@ -13,10 +13,9 @@ index:
 
 
 # Route 2: app_posts_show
-#   /posts/slug
+#   /posts/id/slug/locale
 #    > showAction du PostController
-#   ! définir le slug
-#   Je suis sur la page show de la post xxx
+#   Je suis sur la page show du post xxx
 show:
     path: /{id}/{slug}/{_locale}
     controller: App\Controller\PostController::showAction

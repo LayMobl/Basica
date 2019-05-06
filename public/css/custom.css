@@ -298,6 +298,7 @@
 	-webkit-transition: -webkit-transform 0.4s;
 	-moz-transition: -moz-transform 0.4s;
 	transition: transform 0.4s;
+    width: fit-content;
 }
 
 .no-touch .cs-style-2 figure:hover img,

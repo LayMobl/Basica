@@ -1,3 +1,9 @@
+{#
+  ./templates/posts/index.html.twig
+  Variables disponibles:
+    - posts Array (id, nomfr, nomen, titreonefr, titreoneen, titretwofr, titretwoen, texteonefr, texteoneen, textetwofr, textetwoen, date, imageName, Array tags)
+#}
+
 {% block content1 %}
 
   <div class="section section-breadcrumbs">
@@ -33,7 +39,7 @@
 
               <div class="single-post-content">
                 <p>
-                  {{attribute(post, 'texteone' ~ app.request.locale) | slice(0,200) | raw | striptags }}
+                  {{attribute(post, 'texteone' ~ app.request.locale) | slice(0,200) | raw | striptags }}...
                 </p>
                 <a href="{{path('app_posts_show', {id: post.id , slug: attribute(post, 'nom' ~ app.request.locale) | slugify})}}" class="btn">{{ 'blog.plus' | trans }}</a>
               </div>

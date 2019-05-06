@@ -1,7 +1,7 @@
 {#
   ./templates/pages/show.html.twig
   Variables disponibles:
-    - page pages(id, titre, slug, texte, dateCreation)
+    - Page(id, titrefr, titreen, slugfr, slugen)
 #}
 
 {% extends 'base.html.twig' %}
@@ -22,6 +22,7 @@
   {{ render(controller('App\\Controller\\WorkController::sliderAction',{vue:'slider'})) }}
   {{ render(controller('App\\Controller\\WorkController::indexAction',{limit: 6, vue:'liste'})) }}
   <hr>
+  <!-- Twitter block  -->
   <div class="section">
     <div class="container">
       <div class="row">
@@ -40,6 +41,7 @@
       </div>
     </div>
   </div>
+  <!-- End of Twitter block -->
 
 
   {% elseif page.id == 2 %}
